@@ -1,4 +1,20 @@
-﻿using UnityEngine;
+﻿/////////////////////////////////////////////////////////////////////////////
+// Files:			PlayerController.cs
+//
+// Author:			Sangbeom Yi
+// Description:		Manage BG Scroll
+//
+// Revision History 10/19/2015 file created
+// 					10/20/2015 Add Player Key Input
+//					10/20/2015 Change Coin Getting System
+//					10/22/2015 Add PlayerState
+//					10/22/2015 Add GameManager
+//					10/25/2015 Add Dead Flag and Sound
+//
+//
+// Last Modified by	10/26/2015
+
+using UnityEngine;
 using System.Collections;
 
 // VELOCITYRANGE UTILITY CLASS +++++++++++++++++++++++++
@@ -25,16 +41,19 @@ public enum PlayerState{
 public class PlayerController : MonoBehaviour {
 	//PUBLIC INSTANCE VARIABLES
 	public GameManager GM;
+	public PlayerState PS;
+
 	public float speed = 50f;
 	public float jump = 500f;
 	public VelocityRange velocityRange = new VelocityRange (300f, 1000f);
-	public PlayerState PS;
 	
 	//PRIVATE INSTANCE VARIABLES
 	private AudioSource[] _audioSources;
 	private AudioSource _coinSound;
 	private AudioSource _jumpSound;
 	private AudioSource _deadSound;
+	private AudioSource _PlayBgm;
+	private AudioSource _ResultBgm;
 
 	private Rigidbody2D _rigidbody2D;
 	private Transform _transform;
@@ -46,15 +65,25 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.PS = PlayerState.Run;
+
 		this._rigidbody2D = gameObject.GetComponent<Rigidbody2D> ();
 		this._transform = gameObject.GetComponent<Transform> ();
 		this._animator = gameObject.GetComponent<Animator> ();
 
-
 		this._audioSources = gameObject.GetComponents<AudioSource> ();
 		this._coinSound = this._audioSources[0];
 		this._jumpSound = this._audioSources [1];
-		this._deadSound = this._audioSources [2];	
+		this._deadSound = this._audioSources [2];
+		this._PlayBgm = this._audioSources [3];
+		this._ResultBgm = this._audioSources [4];
+
+		if (Application.loadedLevelName == "IntroScene") { 
+			this.PS = PlayerState.Death;
+			this._animator.SetInteger("AnimState", 1);
+		}
+
+		this._PlayBgm.Play();
 	}
 
 	// Update is called once per frame
@@ -65,14 +94,22 @@ public class PlayerController : MonoBehaviour {
 		float forceX = 0f;
 		float forceY = 0f;
 
+		if (_rigidbody2D == null) {
+			return;
+		}
+
 		float absVelX = Mathf.Abs (this._rigidbody2D.velocity.x);
 		float absVelY = Mathf.Abs (this._rigidbody2D.velocity.y);
 	
+		if (Application.loadedLevelName == "IntroScene") { 
+			return;
+		}
+
 		this._movingValue = Input.GetAxis ("Horizontal"); // gives moving variable a value of -1 to 1
 
-		if (this._movingValue != 0) { // player is moving
+		if (this._movingValue != 0 && this.PS != PlayerState.Death) { // player is moving
 			//check if player is grounded
-			if( this.PS==PlayerState.Run ) {
+			if( this.PS == PlayerState.Run ) {
 				this._animator.SetInteger("AnimState", 1);
 				if(this._movingValue > 0) {
 					// move right
@@ -127,7 +164,9 @@ public class PlayerController : MonoBehaviour {
 		//Debug.Log ("OnTriggerEnterTag:" + otherCollider.tag);
 		if (otherCollider.tag == "Coin") {
 			//Debug.Log ("OnTriggerEnter IN~!~~~!");
-			this._coinSound.Play();
+			if( Application.loadedLevelName == "MainPlayScene" ) { 
+				this._coinSound.Play();
+			}
 			this.GetCoin();
 		}
 
@@ -135,6 +174,7 @@ public class PlayerController : MonoBehaviour {
 		if (otherCollider.gameObject.name == "DeathZone" && this.PS != PlayerState.Death) {
 			this._deadSound.Play();
 			this.GameOver();
+			this._PlayBgm.Stop();
 		}
 	}
 
@@ -146,14 +186,20 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void GetCoin() {
-		Debug.Log ("!!!GetCoin");
-		GM.GetCoin ();
+		if (GM != null) {
+			//Debug.Log ("!!!GetCoin");
+			GM.GetCoin ();
+		}
 	}
 
 	// GameOver Process
 	void GameOver() {
 		this.PS = PlayerState.Death;
 		GM.GameOver ();
+
+		if (_ResultBgm != null) {
+			_ResultBgm.Play ();
+		}
 	}
 
 	// PRIVATE METHODS

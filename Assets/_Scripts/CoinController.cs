@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿// Files:			CoinController.cs
+//
+// Author:			Sangbeom Yi
+// Description:		Coin Contoller
+//
+// Revision History 10/23/2015 file created
+//
+//
+// Last Modified by	10/23/2015
+
+
+using UnityEngine;
 using System.Collections;
 
 public class CoinController : MonoBehaviour {

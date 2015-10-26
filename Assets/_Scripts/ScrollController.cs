@@ -1,4 +1,18 @@
-﻿using UnityEngine;
+﻿///////////////////////////////////////////////////////////////////////////////
+// Files:			ScrollController.cs
+//
+// Author:			Sangbeom Yi
+// Description:		Manage BG Scroll
+//
+// Revision History 10/24/2015 file created
+// 					10/24/2015 BG Scroll
+//
+// Todo 			Fix BG Scroll Bug
+//
+// Last Modified by	10/24/2015
+
+
+using UnityEngine;
 using System.Collections;
 
 public class ScrollController : MonoBehaviour {
