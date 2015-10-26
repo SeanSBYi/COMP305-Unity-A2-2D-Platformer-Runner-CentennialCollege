@@ -24,6 +24,7 @@ public enum PlayerState{
 // PLAYERCONTROLLER CLASS +++++++++++++++++++++++++++++++++++++
 public class PlayerController : MonoBehaviour {
 	//PUBLIC INSTANCE VARIABLES
+	public GameManager GM;
 	public float speed = 50f;
 	public float jump = 500f;
 	public VelocityRange velocityRange = new VelocityRange (300f, 1000f);
@@ -127,9 +128,10 @@ public class PlayerController : MonoBehaviour {
 		if (otherCollider.tag == "Coin") {
 			//Debug.Log ("OnTriggerEnter IN~!~~~!");
 			this._coinSound.Play();
+			this.GetCoin();
 		}
 
-		Debug.Log ("OnTriggerEnterName :" + otherCollider.gameObject.name + ", " + this.PS);
+		//Debug.Log ("OnTriggerEnterName :" + otherCollider.gameObject.name + ", " + this.PS);
 		if (otherCollider.gameObject.name == "DeathZone" && this.PS != PlayerState.Death) {
 			this._deadSound.Play();
 			this.GameOver();
@@ -144,11 +146,14 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void GetCoin() {
+		Debug.Log ("!!!GetCoin");
+		GM.GetCoin ();
 	}
 
 	// GameOver Process
 	void GameOver() {
 		this.PS = PlayerState.Death;
+		GM.GameOver ();
 	}
 
 	// PRIVATE METHODS

@@ -7,12 +7,16 @@ public class ScrollController : MonoBehaviour {
 
 	// Private Instance Value.
 	private float TargetOffset;
+	private Vector2 OffSetV2;
 
 	// Update is called once per frame
 	void Update () {
 		// Moving BG Scroll
-		this.TargetOffset += Time.deltaTime * this.ScrollSpeed;
-		GetComponent<Renderer>().material.mainTextureOffset = new Vector2 (this.TargetOffset, 0);
+		this.TargetOffset = Mathf.Repeat (Time.time * this.ScrollSpeed, 1);
+		OffSetV2 = new Vector2 (this.TargetOffset, 0);
+		GetComponent<Renderer>().sharedMaterial.SetTextureOffset ("_MainTex", this.OffSetV2 );
+		//this.TargetOffset += Time.deltaTime * this.ScrollSpeed;
+		//GetComponent<Renderer>().sharedMaterial.SetTextureOffset = new Vector2 (this.TargetOffset, 0);
 	
 	}
 }
