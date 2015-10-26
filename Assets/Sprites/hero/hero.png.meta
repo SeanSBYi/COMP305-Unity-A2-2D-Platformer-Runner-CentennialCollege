@@ -1,0 +1,551 @@
+fileFormatVersion: 2
+guid: 48d42f58501554284b9a005b8fa6e97b
+timeCreated: 1444232746
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: idle0001
+    21300002: idle0002
+    21300004: idle0003
+    21300006: idle0004
+    21300008: idle0005
+    21300010: idle0006
+    21300012: idle0007
+    21300014: idle0008
+    21300016: idle0009
+    21300018: idle0010
+    21300020: idle0011
+    21300022: idle0012
+    21300024: idle0013
+    21300026: idle0014
+    21300028: idle0015
+    21300030: idle0016
+    21300032: idle0017
+    21300034: idle0018
+    21300036: idle0019
+    21300038: idle0020
+    21300040: idle0021
+    21300042: idle0022
+    21300044: idle0023
+    21300046: idle0024
+    21300048: jump0001
+    21300050: jump0002
+    21300052: jump0003
+    21300054: jump0004
+    21300056: jump0005
+    21300058: jump0006
+    21300060: walk0001
+    21300062: walk0002
+    21300064: walk0003
+    21300066: walk0004
+    21300068: walk0005
+    21300070: walk0006
+    21300072: walk0007
+    21300074: walk0008
+    21300076: walk0009
+    21300078: walk0010
+    21300080: walk0011
+    21300082: walk0012
+    21300084: walk0013
+    21300086: walk0014
+    21300088: walk0015
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: idle0001
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 72
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5234375, y: .4921875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0002
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 6
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5234375, y: .4921875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0003
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 12
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: .5234375, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0004
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 12
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: .5234375, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0005
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 6
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5234375, y: .5078125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0006
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 313
+        width: 65
+        height: 64
+      alignment: 9
+      pivot: {x: .515384614, y: .5078125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0007
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 250
+        width: 65
+        height: 63
+      alignment: 9
+      pivot: {x: .515384614, y: .515873015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0008
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 379
+        width: 66
+        height: 63
+      alignment: 9
+      pivot: {x: .50757575, y: .515873015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0009
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 256
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .49242425, y: .524193525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0010
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 202
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .49242425, y: .524193525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0011
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 152
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .49242425, y: .524193525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0012
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 145
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .49242425, y: .524193525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0013
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 315
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .49242425, y: .524193525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0014
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 252
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .49242425, y: .524193525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0015
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 192
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .49242425, y: .524193525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0016
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 138
+        width: 66
+        height: 62
+      alignment: 9
+      pivot: {x: .49242425, y: .524193525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0017
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 316
+        width: 66
+        height: 63
+      alignment: 9
+      pivot: {x: .50757575, y: .515873015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0018
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 187
+        width: 65
+        height: 63
+      alignment: 9
+      pivot: {x: .515384614, y: .515873015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0019
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 79
+        width: 65
+        height: 64
+      alignment: 9
+      pivot: {x: .515384614, y: .5078125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0020
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 247
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5234375, y: .5078125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0021
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 125
+        width: 64
+        height: 65
+      alignment: 9
+      pivot: {x: .5234375, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0022
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 184
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5234375, y: .4921875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0023
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 121
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5234375, y: .4921875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: idle0024
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 181
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: .5234375, y: .4921875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jump0001
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 320
+        width: 71
+        height: 66
+      alignment: 9
+      pivot: {x: .507042229, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jump0002
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 381
+        width: 73
+        height: 64
+      alignment: 9
+      pivot: {x: .506849289, y: .484375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jump0003
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 274
+        width: 74
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jump0004
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 447
+        width: 74
+        height: 63
+      alignment: 9
+      pivot: {x: .5, y: .492063493}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jump0005
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 444
+        width: 73
+        height: 66
+      alignment: 9
+      pivot: {x: .506849289, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jump0006
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 266
+        width: 71
+        height: 66
+      alignment: 9
+      pivot: {x: .507042229, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0001
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 395
+        width: 79
+        height: 58
+      alignment: 9
+      pivot: {x: .481012672, y: .465517253}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0002
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 452
+        width: 78
+        height: 58
+      alignment: 9
+      pivot: {x: .474358976, y: .465517253}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0003
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 334
+        width: 74
+        height: 58
+      alignment: 9
+      pivot: {x: .445945948, y: .448275864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0004
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 216
+        width: 70
+        height: 60
+      alignment: 9
+      pivot: {x: .414285719, y: .466666669}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0005
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 388
+        width: 74
+        height: 62
+      alignment: 9
+      pivot: {x: .432432443, y: .483870953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0006
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 336
+        width: 75
+        height: 57
+      alignment: 9
+      pivot: {x: .439999998, y: .456140339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0007
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 454
+        width: 80
+        height: 56
+      alignment: 9
+      pivot: {x: .462500006, y: .446428567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0008
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 398
+        width: 81
+        height: 56
+      alignment: 9
+      pivot: {x: .469135791, y: .446428567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0009
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 340
+        width: 79
+        height: 56
+      alignment: 9
+      pivot: {x: .455696195, y: .446428567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0010
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 278
+        width: 74
+        height: 56
+      alignment: 9
+      pivot: {x: .418918908, y: .446428567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0011
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 90
+        width: 66
+        height: 60
+      alignment: 9
+      pivot: {x: .348484844, y: .483333319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0012
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 209
+        width: 69
+        height: 63
+      alignment: 9
+      pivot: {x: .391304344, y: .507936537}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0013
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 394
+        width: 77
+        height: 58
+      alignment: 9
+      pivot: {x: .454545468, y: .465517253}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0014
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 455
+        width: 82
+        height: 55
+      alignment: 9
+      pivot: {x: .5, y: .436363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: walk0015
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 456
+        width: 84
+        height: 54
+      alignment: 9
+      pivot: {x: .511904776, y: .42592594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
