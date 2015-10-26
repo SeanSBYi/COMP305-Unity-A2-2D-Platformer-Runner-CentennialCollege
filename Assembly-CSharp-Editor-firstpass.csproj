@@ -6,7 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{24E021C4-BAFF-1549-5394-D21767049B5A}</ProjectGuid>
+	<ProjectGuid>{8688C6DE-C7BF-117B-30D2-C69DE5830D96}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
@@ -63,7 +63,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
  </Reference>
  <Reference Include="TexturePackerImporter">
- <HintPath>C:/Users/SB.Y/Desktop/GitHub/COMP305-2DPlatformerDemo/Assets/codeandweb.com/Editor/TexturePackerImporter.dll</HintPath>
+ <HintPath>C:/Users/SB.Y/Desktop/GitHub/2D_YRunner_Platformer_300857600/2D_YRunner_Platformer_300857600/Assets/codeandweb.com/Editor/TexturePackerImporter.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

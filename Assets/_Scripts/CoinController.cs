@@ -5,7 +5,6 @@ public class CoinController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -18,8 +17,14 @@ public class CoinController : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D otherCollider) {
+		if (otherCollider.gameObject.CompareTag ("Player")) {
+			Destroy (gameObject);
+		}
+	}
 	
 	void OnDestroy() {
-		Debug.Log("coin was destroyed");
+		//Debug.Log("coin was destroyed");
 	}
 }

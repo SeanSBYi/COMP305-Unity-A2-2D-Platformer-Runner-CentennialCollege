@@ -14,24 +14,34 @@ public class VelocityRange {
 	}
 }
 
+public enum PlayerState{
+	Run,
+	Jump,
+	D_Jump,
+	Death
+}
+
 // PLAYERCONTROLLER CLASS +++++++++++++++++++++++++++++++++++++
 public class PlayerController : MonoBehaviour {
 	//PUBLIC INSTANCE VARIABLES
 	public float speed = 50f;
 	public float jump = 500f;
 	public VelocityRange velocityRange = new VelocityRange (300f, 1000f);
+	public PlayerState PS;
 	
 	//PRIVATE INSTANCE VARIABLES
 	private AudioSource[] _audioSources;
 	private AudioSource _coinSound;
 	private AudioSource _jumpSound;
+	private AudioSource _deadSound;
+
 	private Rigidbody2D _rigidbody2D;
 	private Transform _transform;
 	private Animator _animator;
 
 	private float _movingValue = 0;
 	private bool _isFacingRight = true;
-	private bool _isGrounded = true;
+	//private bool _isGrounded = true;
 
 	// Use this for initialization
 	void Start () {
@@ -43,7 +53,11 @@ public class PlayerController : MonoBehaviour {
 		this._audioSources = gameObject.GetComponents<AudioSource> ();
 		this._coinSound = this._audioSources[0];
 		this._jumpSound = this._audioSources [1];
-	
+		this._deadSound = this._audioSources [2];	
+	}
+
+	// Update is called once per frame
+	void Update() {
 	}
 
 	void FixedUpdate () {
@@ -57,7 +71,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (this._movingValue != 0) { // player is moving
 			//check if player is grounded
-			if(this._isGrounded) {
+			if( this.PS==PlayerState.Run ) {
 				this._animator.SetInteger("AnimState", 1);
 				if(this._movingValue > 0) {
 					// move right
@@ -83,14 +97,16 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		// check if player is jumping
-		if ((Input.GetKey ("up") || Input.GetKey (KeyCode.W))) {
+		if (Input.GetKey ("space") && this.PS != PlayerState.Death) {
 			// chec if player is grounded
-			if(this._isGrounded) {
+			if( this.PS==PlayerState.Run ) {
 				this._animator.SetInteger("AnimState", 2);
 				if(absVelY < this.velocityRange.vMax) {
 					forceY = this.jump;
 					this._jumpSound.Play();
-					this._isGrounded = false;
+
+					this.PS = PlayerState.Jump;
+					//this._isGrounded = false;
 				}
 			}
 		}
@@ -105,10 +121,34 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	// Trigger Event.
+	void OnTriggerEnter2D(Collider2D otherCollider) {
+		//Debug.Log ("OnTriggerEnterTag:" + otherCollider.tag);
+		if (otherCollider.tag == "Coin") {
+			//Debug.Log ("OnTriggerEnter IN~!~~~!");
+			this._coinSound.Play();
+		}
+
+		Debug.Log ("OnTriggerEnterName :" + otherCollider.gameObject.name + ", " + this.PS);
+		if (otherCollider.gameObject.name == "DeathZone" && this.PS != PlayerState.Death) {
+			this._deadSound.Play();
+			this.GameOver();
+		}
+	}
+
 	void OnCollisionStay2D(Collision2D otherCollider) {
 		if (otherCollider.gameObject.CompareTag ("Platform")) {
-			this._isGrounded =  true;
+			//this._isGrounded =  true;
+			this.PS = PlayerState.Run;
 		}
+	}
+
+	void GetCoin() {
+	}
+
+	// GameOver Process
+	void GameOver() {
+		this.PS = PlayerState.Death;
 	}
 
 	// PRIVATE METHODS
