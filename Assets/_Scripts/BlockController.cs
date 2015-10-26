@@ -16,7 +16,7 @@ using System.Collections;
 
 public class BlockController : MonoBehaviour {
 	// Public Instance Value.
-	public float BlockSpeedNow = 220f;
+	public float BlockSpeedNow = 240f;
 	public float BlockLevelUpTime = 4f;
 
 	// For scolling Ground Block
@@ -44,7 +44,7 @@ public class BlockController : MonoBehaviour {
 		this.BlockB.transform.Translate (Vector3.left * this.BlockSpeedNow * Time.deltaTime);
 
 		// Check the block, if it is outside of screen.
-		if (this.BlockA.transform.position.x <= -330) {		
+		if (this.BlockA.transform.position.x <= -360) {		
 			Destroy(this.BlockA);
 
 			this.BlockA = this.BlockB;

@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour {
 
 	private float _movingValue = 0;
 	private bool _isFacingRight = true;
-	//private bool _isGrounded = true;
+	private bool _isGrounded = true;
 
 	// Use this for initialization
 	void Start () {
@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
+		this.CheckGround();
 	}
 
 	void FixedUpdate () {
@@ -127,8 +128,6 @@ public class PlayerController : MonoBehaviour {
 					}
 				}
 			}
-
-
 		} else {
 			// set our idle animation here
 			this._animator.SetInteger("AnimState", 0);
@@ -137,7 +136,7 @@ public class PlayerController : MonoBehaviour {
 		// check if player is jumping
 		if (Input.GetKey ("space") && this.PS != PlayerState.Death) {
 			// chec if player is grounded
-			if( this.PS==PlayerState.Run ) {
+			if( this.PS==PlayerState.Run && this._isGrounded ==  true ) {
 				this._animator.SetInteger("AnimState", 2);
 				if(absVelY < this.velocityRange.vMax) {
 					forceY = this.jump;
@@ -180,9 +179,21 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D otherCollider) {
 		if (otherCollider.gameObject.CompareTag ("Platform")) {
+			// Note : This function moved to CheckGround()
 			//this._isGrounded =  true;
 			this.PS = PlayerState.Run;
 		}
+	}
+
+	void CheckGround () {
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, -Vector2.up, 0.1f);
+			//	Debug.DrawRay(transform.position, Vector3.down * 0.9f, Color.red);//
+		
+		if(hit.transform.tag == "Platform") {
+			this._isGrounded =  true;
+			return;
+		}
+		this._isGrounded =  false;
 	}
 
 	void GetCoin() {
