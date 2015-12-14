@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Plugins\Editor\VSCode.cs" />
+     <None Include="Assets\Sprites\unitychan\Readme.txt" />
      <None Include="Assets\codeandweb.com\Readme.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -63,7 +64,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
  </Reference>
  <Reference Include="TexturePackerImporter">
- <HintPath>C:/Users/SB.Y/Desktop/GitHub/2D_YRunner_Platformer_300857600/2D_YRunner_Platformer_300857600/Assets/codeandweb.com/Editor/TexturePackerImporter.dll</HintPath>
+ <HintPath>C:/Users/SB.Y/Desktop/GitHub/2D_YRunner_Platformer_300857600/Assets/codeandweb.com/Editor/TexturePackerImporter.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

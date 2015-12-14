@@ -39,9 +39,16 @@ public enum PlayerState{
 
 // PLAYERCONTROLLER CLASS +++++++++++++++++++++++++++++++++++++
 public class PlayerController : MonoBehaviour {
+	//CONST VARIABLES
+	public const int PS_Run = 0;
+	public const int PS_Jump = 1;
+	public const int PS_D_Jump = 2;
+	public const int PS_Death = 3;
+
 	//PUBLIC INSTANCE VARIABLES
 	public GameManager GM;
 	public PlayerState PS;
+	public int playerState;
 
 	public float speed = 50f;
 	public float jump = 500f;
@@ -65,7 +72,8 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.PS = PlayerState.Run;
+		//this.PS = PlayerState.Run;
+		this.playerState = PlayerController.PS_Run;
 
 		this._rigidbody2D = gameObject.GetComponent<Rigidbody2D> ();
 		this._transform = gameObject.GetComponent<Transform> ();
@@ -78,8 +86,9 @@ public class PlayerController : MonoBehaviour {
 		this._PlayBgm = this._audioSources [3];
 		this._ResultBgm = this._audioSources [4];
 
-		if (Application.loadedLevelName == "IntroScene") { 
-			this.PS = PlayerState.Death;
+		if (Application.loadedLevelName == "IntroScene") {
+			this.playerState = PlayerController.PS_Death;
+			//this.PS = PlayerState.Death;
 			this._animator.SetInteger("AnimState", 1);
 		}
 
@@ -108,9 +117,11 @@ public class PlayerController : MonoBehaviour {
 
 		this._movingValue = Input.GetAxis ("Horizontal"); // gives moving variable a value of -1 to 1
 
-		if (this._movingValue != 0 && this.PS != PlayerState.Death) { // player is moving
+		//if (this._movingValue != 0 && PS != PlayerState.Death) { // player is moving
+		if (this._movingValue != 0 && this.playerState != PlayerController.PS_Death) {
 			//check if player is grounded
-			if( this.PS == PlayerState.Run ) {
+			//if( PS == PlayerState.Run ) {
+			if( this.playerState == PlayerController.PS_Run ) {
 				this._animator.SetInteger("AnimState", 1);
 				if(this._movingValue > 0) {
 					// move right
@@ -134,15 +145,18 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		// check if player is jumping
-		if (Input.GetKey ("space") && this.PS != PlayerState.Death) {
+		//if (Input.GetKey ("space") && this.PS != PlayerState.Death) {
+		if (Input.GetKey ("space") && this.playerState != PlayerController.PS_Death) {
 			// chec if player is grounded
-			if( this.PS==PlayerState.Run && this._isGrounded ==  true ) {
+			//if( this.PS == PlayerState.Run && this._isGrounded ==  true ) {
+			if( this.playerState == PlayerController.PS_Run && this._isGrounded ==  true ) {
 				this._animator.SetInteger("AnimState", 2);
 				if(absVelY < this.velocityRange.vMax) {
 					forceY = this.jump;
 					this._jumpSound.Play();
 
-					this.PS = PlayerState.Jump;
+					//this.PS = PlayerState.Jump;
+					this.playerState = PlayerController.PS_Jump;
 					//this._isGrounded = false;
 				}
 			}
@@ -170,7 +184,8 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		//Debug.Log ("OnTriggerEnterName :" + otherCollider.gameObject.name + ", " + this.PS);
-		if (otherCollider.gameObject.name == "DeathZone" && this.PS != PlayerState.Death) {
+		//if (otherCollider.gameObject.name == "DeathZone" && this.PS != PlayerState.Death) {
+		if (otherCollider.gameObject.name == "DeathZone" && this.playerState != PlayerController.PS_Death) {
 			this._deadSound.Play();
 			this.GameOver();
 			this._PlayBgm.Stop();
@@ -180,13 +195,16 @@ public class PlayerController : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D otherCollider) {
 		if (otherCollider.gameObject.CompareTag ("Platform")) {
 			// Note : This function moved to CheckGround()
-			//this._isGrounded =  true;
-			this.PS = PlayerState.Run;
+			this._isGrounded =  true;
+			//this.PS = PlayerState.Run;
+			this.playerState = PlayerController.PS_Run;
 		}
 	}
 
 	void CheckGround () {
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, -Vector2.up, 0.1f);
+
+		Debug.DrawRay(transform.position, -Vector2.up, Color.red);//
 			//	Debug.DrawRay(transform.position, Vector3.down * 0.9f, Color.red);//
 		
 		if(hit.transform.tag == "Platform") {
@@ -205,7 +223,8 @@ public class PlayerController : MonoBehaviour {
 
 	// GameOver Process
 	void GameOver() {
-		this.PS = PlayerState.Death;
+		//this.PS = PlayerState.Death;
+		this.playerState = PlayerController.PS_Death;
 		GM.GameOver ();
 
 		if (_ResultBgm != null) {

@@ -1,20 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\PlayerController.cs">
     <Files>
-      <File FileName="Assets\_Scripts\BlockController.cs" Line="48" Column="1" />
-      <File FileName="Assets\_Scripts\PlayerController.cs" Line="192" Column="40" />
       <File FileName="Assets\_Scripts\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\SendManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\PlayScene.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerController.cs" Line="207" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\SB.Y\Desktop\GitHub\2D_YRunner_Platformer_300857600\2D_YRunner_Platformer_300857600\Assets\_Scripts\PlayerController.cs" line="193" />
+      <Breakpoint file="C:\Users\SB.Y\Desktop\GitHub\2D_YRunner_Platformer_300857600\Assets\_Scripts\PlayerController.cs" line="152" />
+      <Breakpoint file="C:\Users\SB.Y\Desktop\GitHub\2D_YRunner_Platformer_300857600\Assets\_Scripts\PlayerController.cs" line="210" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="Assets\_Scripts\PlayerController.cs" line="192" offsetX="621" offsetY="3247" expression="Physics2D" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
